@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Why I built Kept — Hugo Silva</title>
+<meta name="description" content="Kept is made by one person, in Portugal. Why it exists, and the two decisions it never goes back on.">
+<meta name="theme-color" content="#F2F1F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B11" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="./" aria-label="Kept, home">
+    <svg viewBox="0 0 28 36" aria-hidden="true"><rect x="0" y="0" width="28" height="10" rx="4" fill="var(--pale)"/><rect x="0" y="12" width="28" height="7" rx="3" fill="var(--mid)"/><rect x="0" y="21" width="28" height="7" rx="3" fill="var(--violet)"/><rect x="0" y="30" width="28" height="6" rx="3" fill="var(--fixed)"/></svg>
+    Kept
+  </a>
+  <nav aria-label="Pages">
+    <a href="about.html" aria-current="page">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<main class="wrap about">
+  <figure class="about-photo">
+    <picture>
+      <source type="image/webp" srcset="img/hugo-900.webp 900w, img/hugo-1400.webp 1400w" sizes="(max-width: 52rem) 100vw, 26rem">
+      <img src="img/hugo-900.jpg" srcset="img/hugo-900.jpg 900w, img/hugo-1400.jpg 1400w" sizes="(max-width: 52rem) 100vw, 26rem"
+           width="900" height="1125" alt="Hugo Silva, who makes Kept, outdoors at sunset">
+    </picture>
+    <!-- Pip keeps an eye on things from the corner of the photo. -->
+    <svg class="pip about-pip" id="pip" viewBox="0 -10 200 290" aria-hidden="true">
+      <rect class="pip-block" style="--i:0" x="30" y="206" width="140" height="56" rx="18" fill="var(--fixed)"/>
+      <rect class="pip-block" style="--i:1" x="30" y="144" width="140" height="56" rx="18" fill="var(--violet)"/>
+      <rect class="pip-block" style="--i:2" x="30" y="82" width="140" height="56" rx="18" fill="var(--mid)"/>
+      <rect class="pip-block" style="--i:3" x="30" y="0" width="140" height="76" rx="22" fill="var(--pale)"/>
+      <g class="pip-face" id="pip-face">
+        <g class="pip-eyes">
+          <ellipse cx="80" cy="34" rx="6.5" ry="8.5" fill="var(--ink)"/>
+          <ellipse cx="120" cy="34" rx="6.5" ry="8.5" fill="var(--ink)"/>
+          <circle cx="82" cy="31" r="2" fill="#FFFFFF"/>
+          <circle cx="122" cy="31" r="2" fill="#FFFFFF"/>
+        </g>
+        <path d="M91 53 Q100 61 109 53" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="64" cy="50" r="6" fill="var(--cheek)" fill-opacity=".55"/>
+        <circle cx="136" cy="50" r="6" fill="var(--cheek)" fill-opacity=".55"/>
+      </g>
+    </svg>
+  </figure>
+
+  <article class="about-story">
+    <h1>Why I built Kept</h1>
+    <p class="about-lede">I'm Hugo, a software engineer, and I wanted to know one thing about my money that no app would tell me plainly.</p>
+
+    <p>I tracked my finances in spreadsheets that got harder to trust with every tab. I tried the well-known budgeting apps, but most were built for American banks, wanted my bank login, and asked me to plan every euro before the month had even started.</p>
+
+    <p>I didn't want a budget. I wanted to know, at the end of each month, how much I had actually kept.</p>
+
+    <p>So I built it for myself. It started as a dashboard on my laptop, full of charts and projections. The more I used it, the less of it I needed. What mattered fitted in one column: what came in, what leaves whether or not I work, what I chose to spend, and what was left.</p>
+
+    <p>Then I gave it to friends, and their questions changed it more than my own ideas did. The first thing someone asked was where to put their salary, because my words for things meant nothing to anyone but me. Every screen got simpler after that.</p>
+
+    <blockquote>A finance app shouldn't need to know who you are to be useful.</blockquote>
+
+    <p>Two decisions I made early and have never gone back on. Kept doesn't connect to your bank, and it doesn't have a server. I don't fully trust apps that connect to our banks and neither should you. Your numbers stay on your iPhone, and in your own iCloud if you use it. When you import a statement, it's read on your phone and checked row by row against your balance, and if it doesn't add up, Kept imports nothing rather than something wrong.</p>
+
+    <p>And it shouldn't make you feel bad. Heavy months happen. Kept says so plainly and points to next month. Pip, the little stack of blocks, is there to notice what went right.</p>
+
+    <p>Kept is one person's app. If something doesn't work — a statement it can't read, a word that sounds wrong in your language — write to me so I can fix it. I read every email.</p>
+
+    <p class="about-sign">Hugo</p>
+    <a class="contact" href="mailto:keptfinances@gmail.com?subject=Hello%20from%20the%20Kept%20site">Write to me</a>
+  </article>
+</main>
+
+<footer class="wrap foot">
+  <span>Kept is made by Hugo Silva, in Portugal. © 2026</span>
+  <nav aria-label="Footer">
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:keptfinances@gmail.com">keptfinances@gmail.com</a>
+  </nav>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>

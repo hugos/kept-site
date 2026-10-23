@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kept — see what you actually kept</title>
+<meta name="description" content="Kept shows each month as one honest number: what came in, what was fixed, what you chose, and what you kept. No bank login, no account, nothing tracked. For iPhone.">
+<meta name="theme-color" content="#F2F1F7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0B11" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="wrap top">
+  <a class="brand" href="./" aria-label="Kept, home">
+    <svg viewBox="0 0 28 36" aria-hidden="true"><rect x="0" y="0" width="28" height="10" rx="4" fill="var(--pale)"/><rect x="0" y="12" width="28" height="7" rx="3" fill="var(--mid)"/><rect x="0" y="21" width="28" height="7" rx="3" fill="var(--violet)"/><rect x="0" y="30" width="28" height="6" rx="3" fill="var(--fixed)"/></svg>
+    Kept
+  </a>
+  <nav aria-label="Pages">
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<main>
+  <section class="wrap hero">
+    <div>
+      <h1>See what you actually kept.</h1>
+      <p>Kept shows each month as one honest number: what came in, what left whatever happened, what you chose to spend, and what was left. No bank login, no account, nothing tracked.</p>
+      <span class="soon">Coming soon to iPhone</span>
+      <p class="trial">Two weeks free when it arrives.</p>
+    </div>
+
+    <!-- Pip: the month column with a face. His blocks drop in on load; his
+         face follows the pointer. -->
+    <svg class="pip" id="pip" viewBox="0 -10 200 290" role="img" aria-label="Pip, Kept's mascot: four stacked blocks with a smiling face">
+      <ellipse class="pip-shadow" cx="100" cy="272" rx="72" ry="7" fill="var(--ink)" fill-opacity=".08"/>
+      <rect class="pip-block" style="--i:0" x="30" y="206" width="140" height="56" rx="18" fill="var(--fixed)"/>
+      <rect class="pip-block" style="--i:1" x="30" y="144" width="140" height="56" rx="18" fill="var(--violet)"/>
+      <rect class="pip-block" style="--i:2" x="30" y="82" width="140" height="56" rx="18" fill="var(--mid)"/>
+      <rect class="pip-block" style="--i:3" x="30" y="0" width="140" height="76" rx="22" fill="var(--pale)"/>
+      <g class="pip-face" id="pip-face">
+        <g class="pip-eyes">
+          <ellipse cx="80" cy="34" rx="6.5" ry="8.5" fill="var(--ink)"/>
+          <ellipse cx="120" cy="34" rx="6.5" ry="8.5" fill="var(--ink)"/>
+          <circle cx="82" cy="31" r="2" fill="#FFFFFF"/>
+          <circle cx="122" cy="31" r="2" fill="#FFFFFF"/>
+        </g>
+        <path d="M91 53 Q100 61 109 53" fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="64" cy="50" r="6" fill="var(--cheek)" fill-opacity=".55"/>
+        <circle cx="136" cy="50" r="6" fill="var(--cheek)" fill-opacity=".55"/>
+      </g>
+    </svg>
+  </section>
+
+  <section class="wrap month" aria-labelledby="month-title">
+    <div class="column" role="group" aria-label="One month, in four parts">
+      <button class="band" style="--v:499;--c:var(--cash)" data-name="Cash" data-amount="€499" data-share="18% of what came in" data-text="What's still in your account once everything else has gone. Together with what you invested, it's what you kept.">
+        <span class="visually-hidden">Cash</span></button>
+      <button class="band" style="--v:270;--c:var(--invested)" data-name="Invested" data-amount="€270" data-share="9% of what came in" data-text="Money you kept and put to work. It counts as kept, never as spending.">
+        <span class="visually-hidden">Invested</span></button>
+      <button class="band" style="--v:1122;--c:var(--violet)" data-name="Chosen" data-amount="€1,122" data-share="39% of what came in" data-text="Groceries, dinners, the things you decided on this month. Compared with your own usual, never with a budget.">
+        <span class="visually-hidden">Chosen</span></button>
+      <button class="band" style="--v:959;--c:var(--fixed)" data-name="Fixed" data-amount="€959" data-share="34% of what came in" data-text="Rent, loans, insurance: what leaves whether or not you work. Most people have never seen this number on its own.">
+        <span class="visually-hidden">Fixed</span></button>
+    </div>
+    <div>
+      <h2 id="month-title">Every month, in four honest parts.</h2>
+      <p class="month-intro">€2,850 came in. Tap each part of the column to see where it went.</p>
+      <div class="readout" aria-live="polite">
+        <p class="readout-name" id="r-name">Fixed</p>
+        <p class="readout-amount" id="r-amount">€959</p>
+        <p class="readout-share" id="r-share">34% of what came in</p>
+        <p class="readout-text" id="r-text">Rent, loans, insurance: what leaves whether or not you work. Most people have never seen this number on its own.</p>
+      </div>
+      <p class="month-kept">That leaves <strong>€769 kept</strong> — the number Kept puts first.</p>
+    </div>
+  </section>
+
+  <section class="wrap features" aria-labelledby="features-title">
+    <h2 id="features-title">Less typing, more knowing.</h2>
+    <ul>
+      <li>
+        <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><rect x="12" y="6" width="34" height="46" rx="6" fill="none" stroke="var(--violet)" stroke-width="4"/><path d="M20 20h18M20 29h18M20 38h10" stroke="var(--violet)" stroke-width="4" stroke-linecap="round"/><circle cx="46" cy="46" r="13" fill="var(--invested)"/><path d="M40 46l4 4 8-8" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div>
+          <h3>Import a whole month at once</h3>
+          <p>Save a statement from your bank as a PDF. Kept reads it on your iPhone and checks every row against your running balance before showing you anything. If the numbers don't add up, nothing is imported.</p>
+        </div>
+      </li>
+      <li>
+        <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="24" fill="var(--violet)"/><path d="M32 21v22M21 32h22" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg>
+        <div>
+          <h3>Add in one tap, even from the Lock Screen</h3>
+          <p>Tap +, type the amount, done. Kept remembers where things go, so the coffee you buy every morning files itself.</p>
+        </div>
+      </li>
+      <li>
+        <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true"><g fill="var(--violet)"><rect x="4" y="30" width="7" height="26" rx="3"/><rect x="14" y="22" width="7" height="34" rx="3"/><rect x="24" y="34" width="7" height="22" rx="3"/><rect x="34" y="16" width="7" height="40" rx="3"/><rect x="44" y="26" width="7" height="30" rx="3"/></g><rect x="54" y="10" width="7" height="46" rx="3" fill="var(--invested)"/></svg>
+        <div>
+          <h3>Your year, month by month</h3>
+          <p>Twelve columns side by side. Slide your finger across them and each month tells you what came in and what you kept.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="wrap private" aria-labelledby="private-title">
+    <h2 id="private-title">No account. No server. Nothing tracked.</h2>
+    <p>There's no account to create and nowhere for your numbers to go. What you enter stays on your iPhone, and in your own iCloud if you use it. Even this website doesn't track you.</p>
+    <a href="privacy.html">Read the privacy policy</a>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>Kept is made by Hugo Silva, in Portugal. © 2026</span>
+  <nav aria-label="Footer">
+    <a href="about.html">About</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:keptfinances@gmail.com">keptfinances@gmail.com</a>
+  </nav>
+</footer>
+
+<script src="site.js" defer></script>
+</body>
+</html>
