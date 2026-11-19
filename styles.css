@@ -208,3 +208,7 @@ details p { margin: .75rem 0 0; color: var(--ink-soft); }
   .about-photo { position: relative; top: 0; max-width: 26rem; }
   .about-pip { width: 4.5rem; right: -.5rem; }
 }
+
+.doc ul { padding-left: 1.25rem; margin: .5rem 0 1rem; }
+.doc li { margin-bottom: .6rem; }
+.doc li::marker { color: var(--violet); }
